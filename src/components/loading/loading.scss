@@ -1,0 +1,58 @@
+@mixin moveLeftToRight($name, $from, $to) {
+  @keyframes #{$name} {
+    0% {
+      transform: translateX($from);
+    }
+    100% 
+    {
+      transform: translateX($to);
+    }
+  }
+}
+
+@include moveLeftToRight(firstCircle,0px ,50px );
+@include moveLeftToRight(secondCircle,0px ,-50px );
+
+.loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+
+    background-color: #ffffff;
+    opacity: 0.4;
+
+    @keyframes moveLeftandRight {
+      from {
+        transform: translateX(0%);
+      }
+    
+      to {
+        transform: translateX(100%);
+      }
+    }
+
+
+    .circle {
+        background-color: #a77dd5;
+        width: 60px;
+        height:60px;
+        border-radius: 50%;
+        opacity: 0.6;
+
+      }
+      
+      .circle:first-child {
+          animation: firstCircle 0.7s ease-out 0s infinite alternate both; 
+      }
+
+      .circle:last-child {
+          animation: secondCircle 0.7s ease-out 0s infinite alternate both;
+      }
+  }

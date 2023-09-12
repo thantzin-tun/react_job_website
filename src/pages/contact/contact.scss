@@ -1,0 +1,60 @@
+
+.group {
+
+  .foundJob {
+      border-right: 1px solid #dfdfdf;
+      padding-left: 15px;
+  }
+
+  .sort {
+    display: flex;
+    select {
+        width: 150px;
+        border: none;
+        &:focus {
+          border: none;
+          outline: none;
+          box-shadow: none;
+        }
+        option {
+          color: black;
+          font-weight: 400;
+          font-size: 14px;
+        }
+    }
+}
+
+
+.filter {
+    display: none;
+
+    .filter-group {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 20px;
+    }
+}
+
+@media(max-width:1024px) {
+  .sort {
+    display: none;
+  }
+  .filter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .foundJob {
+    border-right: 0px;
+  }
+}
+@media(max-width:1024px) {
+  .filter {
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+  }
+}
+
+}
